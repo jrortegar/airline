@@ -17,7 +17,7 @@ contract('Airline', accounts => {
        let {flightName, price} = await instance.flights(0);
 
         await instance.buyFlight(0,{from:accounts[0], value:price});
-        let customerFlight = await instance.customersFlights(accounts[0], 0);
+        let customerFlight = await instance.customerFlights(accounts[0], 0);
         let customerTotalFlights = await instance.customerTotalFlights(accounts[0]);
 
         assert(customerFlight[0],flightName);
